@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { searchBkm } from './service/userStore.js';
 
+
 const Home = (props) => {
 
-  const [bkms, setBkms] = useState('');
+  const [bkms, setBkms] = useState([]);
 
   useEffect(() => {
     searchBkm()
         .then(data => {
             setBkms(data.data);
-            console.log(bkms);
         })
   });
 
@@ -24,9 +24,9 @@ const Home = (props) => {
   }
 
   return (
-    <div>
+    <div className="App">
       <h1>Elenco bkm</h1>
-      <table class="table is-fullwidth is-hoverable">
+      <table className="table is-fullwidth is-hoverable">
           <thead>
               <tr>
                   <th>id</th>

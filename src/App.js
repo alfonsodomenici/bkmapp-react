@@ -4,6 +4,7 @@ import './App.css';
 import { doLogin } from './service/userStore.js';
 import { storeToken } from './security/tokenManager.js';
 import { useNavigate } from 'react-router-dom';
+import 'bulma/css/bulma.min.css';
 
 function App() {
 
@@ -24,10 +25,11 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Login</h1>
        <form >
-          <input onChange={onChangeUsr}  type="text" name="email" id="email" placeholder='enter email...' />
-          <input onChange={onChangePwd}  type="password" name="pwd" id="pwd" />
-          <button onClick={onLogin}>Login</button>
+          <input className="input" onChange={onChangeUsr}  type="text" name="email" id="email" placeholder='enter email...' />
+          <input className="input" onChange={onChangePwd}  type="password" name="pwd" id="pwd" />
+          <button className="button is-primary" onClick={onLogin}>Login</button>
         </form>
     </div>
   );
